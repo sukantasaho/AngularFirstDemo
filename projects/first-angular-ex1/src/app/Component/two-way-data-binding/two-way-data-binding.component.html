@@ -1,0 +1,21 @@
+<div>
+    Product Id : {{prodId}} <br>
+    Product Name : {{prodName}} <br>
+    Product City : {{prodCity}} <br>
+    Product Stock : {{prodStock==true?"Available":"Out of Stock"}} <br>
+    Product Price : {{prodPrice}}
+</div>
+<hr>
+<div>
+    Product Id : <input type="number" [(ngModel)]="prodId"> <br>
+    Product Name : <input type="text" [(ngModel)]="prodName"> <br>
+    Product City : <select name="" id="" [(ngModel)]="prodCity">
+        <option value="" selected>--Select City--</option>
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Bangalore">Bangalore</option>
+        <option value="Bhubaneswar">Bhubaneswar</option>
+    </select>
+    Stock Availability : <input type="checkbox" name="" id="" [(ngModel)]="prodStock">
+    Product Price : <input type="text" [(ngModel)]="prodPrice">
+</div>

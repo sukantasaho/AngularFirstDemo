@@ -1,0 +1,16 @@
+th,td{
+    padding-left: 150px;
+}
+div{
+margin-top: 40px;
+}
+.odd{
+  background-color: #c8e6c9 ;
+}
+.even{
+  background-color: #e0f2f1;
+}
+thead{
+    background-color: #f50057;
+    color: white;
+}

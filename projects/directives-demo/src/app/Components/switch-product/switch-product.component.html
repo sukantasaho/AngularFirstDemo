@@ -1,0 +1,35 @@
+<div class="container">
+    <h1>Product Details With NgSwitch Directive</h1>
+    <div class="btn-toolbar">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-warning" name="basic" (click)="ChangeTemplate($event)" title="Basic">Basic Details</button>
+            <button type="button" class="btn btn-warning" name="preview" (click)="ChangeTemplate($event)" title="Preview">Preview</button>
+            <button type="button" class="btn btn-warning" name="rating" (click)="ChangeTemplate($event)" title="Rating">Rating</button>
+            <button type="button" class="btn btn-warning" name="description" (click)="ChangeTemplate($event)" title="Description">Description</button>  
+        </div>
+    </div>
+    <div [ngSwitch]="template">
+         <div  *ngSwitchCase="'basic'">
+           Product ID : {{product.id}} <br>
+           Titile : {{product.title}} <br>
+           Price : {{product.price}} <br>
+           Category : {{product.category}} <br>
+         </div>
+         <div  *ngSwitchCase="'preview'">
+            <h4>Preview The Product</h4>
+            <input type="checkbox" (click)="toggle()">
+            <div *ngIf="flag">
+               Image : <img [src]="product.image" alt="" width="200px" height="200px">
+            </div>
+          </div>
+          <div *ngSwitchCase="'rating'" class="rating">
+             <h4>Rating Details</h4>
+              Rating : <span class="bi bi-star-fill text-success"></span>{{product.rating.rate}}[{{product.rating.count}}]
+          </div>
+          <div *ngSwitchCase="'description'">
+            <h4>Description Details</h4>
+             Product Description : {{product.description}} <br>
+         </div>
+
+    </div>
+</div>

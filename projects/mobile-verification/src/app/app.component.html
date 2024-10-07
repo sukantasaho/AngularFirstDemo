@@ -1,0 +1,21 @@
+<h1 *ngIf="isOTPVerified">Your transaction is completed Successfully</h1>
+<div class="sendingOTP_Page" *ngIf="flag1">
+     <div class="mobPage">
+      <h2>Mobile Number</h2>
+      <input type="text"   [(ngModel)]="mobNumber" placeholder="Your mobile number">
+     </div>
+    <div class="main">
+      <button class="btn" (click)="SendOTP()"><b>Send OTP</b></button>
+    </div>
+</div>
+<h3 *ngIf="otpResponse.status">{{otpResponse.message}}</h3>
+
+<div class="OTP_Verify_Page" *ngIf="flag2">
+  <div class="mobPage">
+   <h2>OTP</h2>
+   <input type="text"   [(ngModel)]="otp" placeholder="OTP" style="text-align: center;">
+  </div>
+ <div class="main">
+   <button class="btn1" (click)="VerifyOTP()"><b>Verify</b></button>
+ </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+    <form class="frm">
+          <h3>Doctor Registration Form</h3>
+        <div class="mb-3 mt-3">
+          <label  class="form-label">Doctor Name</label>
+          <input type="text" class="form-control" id="docName" placeholder="Enter Your Name" [(ngModel)]="doctor.docName"  name="docName">
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Income</label>
+          <input type="number" class="form-control" id="income" placeholder="Enter Your Income" name="income" [(ngModel)]="doctor.income">
+        </div>
+        <!-- <div class="mb-3">
+          <label class="form-label">Specialization</label>
+          <input class="form-control" type="text" name="specialization" id="specialization" [(ngModel)]="doctor.specialization" placeholder="Enter Your Specialization">
+        </div> -->
+        <div class="mb-3">
+          <select  class="form-select"  (change)="ChangeSpecialization(specialization.value)" ngModel #specialization="ngModel" name="specialization" >
+              <option value="" selected>--Select Specialization--</option>
+              <option value="" *ngFor="let item of specializations" [value]="item">{{item|uppercase}}</option>
+          </select>
+        </div>
+        <div class="insert">
+          <button class="btn btn-primary" (click)="SaveDoctor()" id="ibtn" ><b>Create</b></button>
+        </div>
+      </form>
+</div>
+
+<div class="alert alert-success m-2" role="alert" *ngIf="success" id="insert">
+    <h6>{{response.message}}</h6>
+     <h5 (click)="Hide()"><b>OK</b></h5>
+</div>
+ 

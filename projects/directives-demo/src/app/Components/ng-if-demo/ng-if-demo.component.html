@@ -1,0 +1,14 @@
+
+<div class="container">
+    <h2>Product Details</h2>
+    <hr>
+    Product Name : {{product.Name}} <br>
+    Price : {{product.Price}} <br>
+    <dt class="form-switch">
+        <input type="checkbox" name="preview" [(ngModel)]="preview">
+        {{preview==true?"Hide":"Show"}}
+    </dt>
+    <dt *ngIf="preview">
+       Product Image :&nbsp;&nbsp;<img [src]="product.Image" alt="" width="100px">
+    </dt>
+</div>

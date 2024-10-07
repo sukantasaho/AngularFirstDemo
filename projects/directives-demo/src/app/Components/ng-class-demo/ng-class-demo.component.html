@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <h1>Class Binding</h1>
+    <ul class="list-unstyled">
+         <li><input type="checkbox" ngModel #border="ngModel" >Border</li>
+         <li><input type="checkbox" ngModel #background="ngModel" >BackGround</li>
+         <li><input type="checkbox" ngModel #text="ngModel">Text</li>
+    </ul>
+    <h2 [ngClass]="'bg-style'">My Name Sukanta</h2>
+    <h2 [ngClass]="'name'">My Name Sukanta</h2>
+    <h2 [ngClass]="['text-style','border-style','bg-style']">NgClass Array</h2>
+    <h1 [ngClass]="{'text-style':text.value,'border-style':border.value,'bg-style':background.value}">Welcome NgClass Object</h1>
+</div>
+<div>
+  <div class="check-container">
+    <div><input type="checkbox" ngModel #red="ngModel">Red</div>
+    <div><input type="checkbox" ngModel #yellow="ngModel">Yellow</div>
+    <div><input type="checkbox" ngModel #blue="ngModel">Blue</div>
+    <div><input type="checkbox" ngModel #green="ngModel">Green</div>
+    <div><input type="checkbox" ngModel #black="ngModel">Black</div>
+    <div><input type="checkbox" ngModel #aqua="ngModel">Aqua</div>
+  </div>
+
+  <div class="container">
+        <div [ngClass]="{'BgRed':red.value}">Red</div>
+        <div [ngClass]="{'BgYellow':yellow.value}">Yellow</div>
+        <div [ngClass]="{'BgBlue':blue.value}">Blue</div>
+        <div [ngClass]="{'BgGreen':green.value}">Green</div>
+        <div [ngClass]="{'BgBlack':black.value}">Black</div>
+        <div [ngClass]="{'BgAqua':aqua.value}">Aqua</div>
+   </div>

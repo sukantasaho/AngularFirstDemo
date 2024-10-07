@@ -1,0 +1,14 @@
+<div class="container fluid">
+    <h2>Data Binding Example</h2>
+    <table [border]="tableBorder" [width]="tableWidth" [attr.height]="tableHeight">
+        <tr>
+            <th>ID</th><th>Name</th><th>Price</th><th>Availability</th>
+        </tr>
+        <tr>
+            <td>{{product.productId}}</td><td>{{product.productName}}</td><td>{{product.price}}</td>
+            <td>
+              <input type="checkbox" [checked]="product.stock">
+            </td>
+        </tr>
+    </table>
+</div>

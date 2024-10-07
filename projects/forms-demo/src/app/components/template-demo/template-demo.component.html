@@ -1,0 +1,29 @@
+<div class="container">
+    <form #frmRegister="ngForm" [ngClass]="{'valid-style':frmRegister.valid,'invalid-style':frmRegister.invalid}" (submit)="RegisterForm(frmRegister.value)">
+        <h3>Template Driven Form</h3>
+        <hr>
+         <dl>
+            <dt>Username</dt>
+            <dd><input type="text" name="UserName" ngModel #UserName="ngModel" required minlength="4" maxlength="10"></dd>
+            <dt>Select Age</dt>
+            <dd>18<input type="range" name="Age" ngModel #Age="ngModel" min="18" max="60" required>60</dd>
+            <dt>Select City</dt>
+            <dd>
+                <select name="City" ngModel #City="ngModel">
+                  <option value="Hyderabad">Hyderabad</option>
+                  <option value="Bangalore">Bangalore</option>
+                  <option value="Odisha">Odisha</option>
+               </select>
+           </dd>
+           <dt>Gender</dt>
+           <dd>
+              <input type="radio" name="Gender" ngModel #Gender="ngModel" value="male">Male
+              <input type="radio" name="Gender" ngModel #Gender="ngModel" value="female">Female
+           </dd>
+           <dt>Are you Over 18+?</dt>
+           <dd><input type="checkbox" name="Adult" ngModel #Adult="ngModel"></dd>
+         </dl>
+         <button class="btn btn-primary" [disabled]="frmRegister.invalid">Save</button>
+         <button *ngIf="frmRegister.dirty" class="btn btn-primary">Save As Draft</button>
+    </form>
+</div>

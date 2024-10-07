@@ -1,0 +1,51 @@
+<div class="container">
+    <form class="frm">
+          <h3>Edit Form</h3>
+          <div class="mb-3 mt-3">
+            <label  class="form-label">Doctor ID</label>
+            <input type="text" class="form-control" id="docId" placeholder="Enter Your Name" [(ngModel)]="doctor.docId" name="docId" readonly>
+          </div>
+        <div class="mb-3 mt-3">
+          <label  class="form-label">Doctor Name</label>
+          <input type="text" class="form-control" id="docName" placeholder="Enter Your Name" [(ngModel)]="doctor.docName" name="docName">
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Income</label>
+          <input type="number" class="form-control" id="income" placeholder="Enter Your Income" name="income" [(ngModel)]="doctor.income">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Specialization</label>
+          <input class="form-control" type="text" name="specialization" id="specialization" [(ngModel)]="doctor.specialization" placeholder="Enter Your Specialization">
+        </div>
+        <button class="btn btn-primary"  (click)="UpdateDoctor()"><b>Update</b></button>
+      </form>
+</div>
+<div class="message" *ngIf="success">
+  <div class="alert alert-success m-2 form-control-5" role="alert">
+    <h6>{{response.message}}</h6> 
+    <h5 (click)="Hide()"><b>OK</b></h5>
+  </div>
+</div>
+
+ 
+
+
+<!-- <div class="container" *ngIf="editFlag">
+    <form>
+        <div>
+            Doctor Name :
+            <input type="text" [(ngModel)]="doctor.docName" name="docName">
+        </div>
+        <div>
+            Income :
+            <input type="text" [(ngModel)]="doctor.income" name="income">
+        </div>
+        <div>
+            Specialization :
+            <input type="text" [(ngModel)]="doctor.specialization" name="specialization">
+        </div>
+        <div>
+            <button class="btn btn-primary" (click)="SaveDoctor()">Create</button>
+        </div>
+    </form>
+</div> -->

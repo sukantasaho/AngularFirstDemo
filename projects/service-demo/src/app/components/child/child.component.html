@@ -1,0 +1,24 @@
+<div class="container p-4 m-3 bg-light text-dark" style="height: 600px; width: 80%;">
+    <h3>Child Container</h3>
+    <p>{{msgFromParent}}</p>
+    <p><button class="btn btn-danger" (click)="ChildButtonClick()">Message To Parent</button></p>
+        <div class="main" *ngIf="stuFlag">
+            <h4>Data From Parent</h4>
+           <table align="center">
+             <thead>
+                 <tr>
+                     <th>Id</th>
+                     <th>Name</th>
+                     <th>Branch</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 <tr *ngFor="let student of studentObjects; let e=even;let o = odd;" [ngClass]="{'even-background': e, 'odd-background': o}">
+                     <td>{{student.id}}</td>
+                     <td>{{student.name}}</td>
+                     <td>{{student.branch}}</td>
+                 </tr>
+             </tbody>
+           </table>
+        </div>
+</div>

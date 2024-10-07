@@ -1,0 +1,16 @@
+<H1>Angular File Uploading And Downloading</H1>
+<div class="container">
+  <label>Username</label><input type="text" [(ngModel)]="userName">
+  <input type="file" [(ngModel)]="selectedFile" (change)="OnFileSelected($event)">
+  <button class="btn btn-primary" (click)="Save()">Create</button><br><br>
+  <div class="row">
+      <div class="col-2" *ngFor="let user of userDetails">
+           <div class="card text-center">
+                <img [src]="'data:image/png;base64,'+user.displayPicture" class="card-img-top" style="width: 200px;height: 200px;" />
+                <div class="card-body">
+                   <h4 class="card-title">{{user.userName}}</h4>
+                </div>
+           </div>
+      </div>
+  </div>
+</div>

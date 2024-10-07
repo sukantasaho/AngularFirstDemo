@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<body>
+    <div [(ngModel)]="greenBg" [(ngModel)]="redBg">
+        <form action="login" method="post" [ngClass]="{'formBgGreen':greenBg, 'formBgRed':redBg}">
+            <table align="center">
+                <tr>
+                    <td>Username</td>
+                    <td><input type="text" name="username" (keyup)="LoginFunction($event)"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="pwd" (keyup)="LoginFunction($event)"></td>
+                </tr>
+                <tr>
+                    <td><button class="bi bi-primary" type="submit">Login</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

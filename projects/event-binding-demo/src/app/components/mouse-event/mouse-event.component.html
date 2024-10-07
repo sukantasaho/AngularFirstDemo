@@ -1,0 +1,23 @@
+<div class="container fluid">
+    <h2>Display</h2>
+    <img [src]="imageUrl" width="200px" height="200px">
+    <div class="m-2">
+        <div class="btn-group">
+            <button class="text black" (mouseover)="SetColor('blue')">Blue</button>
+            <button class="text black" (mouseover)="SetColor('white')">White</button>
+            <button class="text black" (mouseover)="SetColor('black')">Black</button>
+        </div>
+    </div>
+</div>
+
+<div class="container fluid">
+    <h2>Display Big Size Image</h2>
+    <img [src]="image" width="400px" height="400px">
+    <div class="m-2">
+        <div class="main">
+            <img  [src]="blueshoe"  width="130px" height="100px"  (mouseover)="DisplayImage('blue')">
+            <img [src]="whiteshoe" width="130px" height="100px" (mouseover)="DisplayImage('white')">
+            <img [src]="blackshoe" width="130px" height="100px" (mouseover)="DisplayImage('black')">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+ 
+ <div class="container">
+    <ol class="list-group">
+        <li class="list-group-item">{{message | uppercase}}</li>
+        <li class="list-group-item">{{message | lowercase}}</li>
+        <li class="list-group-item">{{message | titlecase}}</li>
+        <li class="list-group-item">{{price | number}}</li>
+        <li class="list-group-item">{{price | currency:'INR'}}</li>
+        <li class="list-group-item">{{price | currency:'EUR'}}</li>
+        <li class="list-group-item">{{mfd | date:'medium'}}</li>
+        <li class="list-group-item">{{mfd | date:'shortTime'}}</li>
+        <li class="list-group-item">{{rate | percent}}</li>
+        <li class="list-group-item">{{product | json}}</li>
+        <li class="list-group-item">{{message | slice:0:7}}</li>
+    </ol>
+ </div>
+ <div>
+    <table>
+        <thead>
+            <tr><th>Name</th><th>ShippedTo</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of productList">
+               <td>{{item.Name}}</td>
+               <td>{{item.ShippedTo}}</td>
+               <td>{{item.ShippedTo | i18nSelect:status}}</td>
+            </tr>
+        </tbody>
+    </table>
+ </div>
+

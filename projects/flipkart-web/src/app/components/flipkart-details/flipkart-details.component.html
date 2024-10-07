@@ -1,0 +1,26 @@
+<!-- <div class="position-relative">
+    <div class="position-absolute text-white top-50 start-50">
+        <h3>Product Details</h3>
+    </div>
+</div> -->
+<div class="container">
+    <div class="row">
+        <div class="col-4 bg-secondary text-white rounded">
+            
+                <img [src]="product.image" width="200" height="200" class="rounded m-3">
+                <p><b>{{product.price | currency:'INR'}}</b></p>
+                <p><b>{{product.title}}</b></p>
+                <p><a routerLink="more/{{product.id}}" class="text-decoration-none text-white"><b>Description...</b></a></p>
+        </div>
+        <div class="col-4 bg-warning rounded" id="description">
+            <h4>Product Description</h4>
+            <router-outlet></router-outlet>
+        </div>
+         
+    </div>
+   
+</div>
+<div class="mt-3">
+    <a routerLink="/home">Back To Products</a>
+</div>
+

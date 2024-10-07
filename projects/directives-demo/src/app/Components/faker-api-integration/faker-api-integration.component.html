@@ -1,0 +1,54 @@
+<h3>Integration With Third Party API To Get All Products Information</h3>
+<body>
+    <!-- <div *ngFor="let p of produstObjects" class="container">
+        Product Id : {{p.id}} <br>
+        Title : {{p.title}} <br>
+        Price : {{p.price}} <br>
+        Description : {{p.description}} <br>
+        Category : {{p.category}} <br>
+        Image :&nbsp;&nbsp;&nbsp;<img [src]="p.image" alt="" width="100px" height="100px"><br>
+        Rating : <span class="bi bi-star-fill text-success"></span>{{p.rating.rate}}[{{p.rating.count}}]
+        <hr>
+    </div>
+      -->
+      <div class="d-flex flex-wrap">
+        <!-- <button (click)="GetAllProducts()" class="api">Get All Products</button> -->
+        <button (click)="SwitchTemplateViewMode()" class="template"><b>{{templateViewType}}</b></button>
+      </div>
+
+      <div *ngIf="flag; then TableView; else CardView;"></div>
+        <ng-template #TableView>
+         <div class="main-container">
+            <table align="center">
+                <thead>
+                   <tr><th>Id</th><th>Title</th><th>Price</th><th>Category</th><th>Image</th><th>Rating</th></tr>
+                </thead>
+                <tbody>
+                   <tr *ngFor="let item of produstObjects">
+                     <td id="item-id">{{item.id}}</td>
+                     <td>{{item.title}}</td>
+                     <td>&#8377;{{item.price}}</td>
+                     <td>{{item.category}}</td>
+                     <td><img [src]="item.image" id="item-img" alt="" width="80px" height="80px"></td>
+                     <td><span class="bi bi-star-fill text-success"></span>{{item.rating.rate}}[{{item.rating.count}}]</td>
+                   </tr>
+                </tbody>
+            </table>
+          </div>
+       </ng-template>
+            <ng-template #CardView>
+              <div class="d-flex flex-wrap">
+                <div class="card" style="width: 18rem;" *ngFor="let item of produstObjects">
+                    <img class="card-img-top" [src]="item.image" alt="Card image cap" style="width:100px;height:150px">
+                    <div class="card-body">
+                      <p><span class="bi bi-star-fill text-success"></span>{{item.rating.rate}}[{{item.rating.count}}]</p>
+                      <h4>Price&nbsp;&#8377;{{item.price}}</h4>
+                      <h6 class="card-title">{{item.title}}</h6>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+            </div>
+           </ng-template>
+</body>
+

@@ -1,0 +1,19 @@
+<div class="container">
+<h1>Product Information</h1>
+<hr>
+    <dl>
+        <dt>ProductId</dt>
+        <dd>{{product.productId}}</dd>
+        <dt>Product Name</dt>
+        <dd>{{product.productName}}</dd>
+        <dt>Stock Availability</dt>
+        <dd>
+            <input type="checkbox" name="" [checked]="product.isAvailable">
+        </dd>
+         <dt>Image</dt>
+         <dd>
+            <img src="{{product.imageUrl}}" height="200px" width="200px">
+         </dd>
+    </dl>
+    
+</div>

@@ -1,0 +1,20 @@
+.frm{
+    background-color: #e8eaf6;
+    padding: 30px;
+    border-radius: 10px;
+}
+.btn{
+    margin-left: 150px;
+}
+#insert{
+    text-align: center;
+}
+.insert{
+    margin-left: 80px;
+}
+ h5,h6{
+    color: green;
+ }
+ h5:hover{
+    cursor: pointer;
+ }

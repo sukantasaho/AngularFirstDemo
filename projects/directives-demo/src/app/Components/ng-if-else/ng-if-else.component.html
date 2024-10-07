@@ -1,0 +1,31 @@
+<div class="container">
+    <!-- <div *ngIf="flag;then Success;else Fail"></div>
+    <ng-template #Success>
+        <div class="alert alert-success" role="alert">
+            <h4 id="h4-success">Record Saved Success!</h4>
+          </div>
+    </ng-template>
+    <ng-template #Fail>
+        <div class="alert alert-danger" role="alert">
+            <h4 id="h4-fail">Record Saved Failure!</h4>
+        </div>
+    </ng-template>-->
+    <dl>
+        <dt>Name</dt>
+        <dd>{{product.Name}}</dd>
+        <dt>Price</dt>
+        <dd>{{product.Price}}</dd>
+        <dt>
+            <button class="btn btn-primary" (click)="toggleButton()">{{btnText}}</button>
+        </dt>
+         <dd>
+            <div *ngIf="toggle; then Preview; else Description;"></div>
+            <ng-template #Preview>
+                 <img [src]="product.Image" alt="">
+            </ng-template>
+            <ng-template #Description>
+                 <h2>{{product.Description}}</h2>
+           </ng-template>
+         </dd>
+    </dl>
+</div> 

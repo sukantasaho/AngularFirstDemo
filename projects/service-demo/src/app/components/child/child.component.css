@@ -1,0 +1,24 @@
+th,td{
+    padding-left: 100px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+}
+thead{
+    background-color: black;
+    color: white;
+}
+tbody{
+    background-color: #9e9d24;
+    color: rgb(35, 13, 207);
+    
+}
+.even-background{
+    background-color: #e8eaf6;
+}
+/* .odd-background{
+
+} */
+h4{
+    text-align: center;
+}

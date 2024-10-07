@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Publish</title>
+</head>
+<body>
+    <div>
+        <h1>Student Result Publishing</h1>
+        <table align="center">
+            <tr><th>Id</th><th>Name</th><th>FLO</th><th>MATH</th><th>TLS</th><th>Obtained Mark</th><th>Average Mark</th><th>Result</th></tr>
+            <tr><td>{{stdId}}</td><td>{{stdName}}</td><td>{{sub1}}</td><td>{{sub2}}</td><td>{{sub3}}</td><td>{{marks}}</td><td>{{averageMark}}</td><td>{{result}}</td></tr>
+        </table>
+    </div>
+    <hr>
+    <div>
+        Student Id : <input type="number" [(ngModel)]="stdId"> <br>
+        Student Name : <input type="text" [(ngModel)]="stdName"> <br>
+        FLO : <input type="number" [(ngModel)]="sub1"> <br>
+        MATH : <input type="number" [(ngModel)]="sub2"> <br>
+        TLS : <input type="number" [(ngModel)]="sub3"> <br>
+    </div>
+    <div>
+        <button (click)="calculation()">Calculate</button>
+    </div>
+</body>
+</html>

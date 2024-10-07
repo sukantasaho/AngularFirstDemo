@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="btn">
+        <button (click)="GetUpdatedData()">Get Updated Data</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>EmpId</th>
+                <th>EmpName</th>
+                <th>EmpSalary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of emps;trackBy:recordChanges">
+                <td>{{item.eid}}</td>
+                <td>{{item.ename}}</td>
+                <td>{{item.esal}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

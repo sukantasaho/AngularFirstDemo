@@ -1,0 +1,38 @@
+<div>
+    <dl>
+        <dt>BackGround</dt>
+        <dd>
+            <select [(ngModel)]="bgStyle">
+                <option value="red" selected>Red</option>
+                <option value="black">Black</option>
+                <option value="green">Green</option>
+                <option value="yellow">Yellow</option>
+            </select>
+        </dd>
+        <dt>Text Color</dt>
+        <dd>
+            <select [(ngModel)]="textStyle">
+                <option value="red">Red</option>
+                <option value="black">Black</option>
+                <option value="aqua">Aqua</option>
+                <option value="yellow">Yellow</option>
+            </select> 
+        </dd>
+        <dt>Padding</dt>
+        <dd>
+            <div>Your value={{padding}}</div>
+            1px <input type="range" [(ngModel)]="padding" min="1" max="100">100px
+        </dd>
+        <dt>FontSize</dt>
+        <dd>
+             <div>Your value={{fontSize}}</div>
+            1px <input type="range" (change)="ChangeFont()" [(ngModel)]="fontSize" min="1" max="100">100px
+        </dd>
+        <dd>
+            <button type="button" class="btn btn-primary" (click)="ApplyStyle()">Apply</button>
+        </dd>
+    </dl>
+    <div style="height: 300px;" class="container-fluid d-flex justify-content-center align-items-center">
+            <h1 [ngStyle]="StyleObj">Welcome Sukanta</h1>
+    </div>
+</div>

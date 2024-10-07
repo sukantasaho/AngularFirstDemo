@@ -1,0 +1,6 @@
+<div class="container-fluid p-4 m-3 bg-dark text-white" style="height: 800px; width: 100%;">
+  <h2>Parent Container</h2>
+  <button class="btn btn-primary" (click)="SendClick()">Send Message To Child</button>
+  <app-child [msgFromParent]="msg" [studentObjects]="students" [stuFlag]="studentFlag" [msgFlag]="messageFlag" (childClick)="GetMessageFromChild($event)"></app-child>
+  <h3 *ngIf="childFlag">Message Received From Child -- {{msgFromChild}}</h3>
+</div>

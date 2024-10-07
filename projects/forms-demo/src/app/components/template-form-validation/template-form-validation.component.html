@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <form #frmRegister="ngForm" class="m-2 p-4" [ngClass]="{'form-ng-invalid':frmRegister.invalid,'form-ng-valid':frmRegister.valid}">
+        <h3>Register User</h3>
+        <dl>
+            <dt>Username</dt>
+            <dd><input type="text" name="username" required minlength="5" maxlength="15" ngModel #username="ngModel"></dd>
+            <dd class="text-danger" *ngIf="frmRegister.submitted && username.invalid">
+                <p *ngIf="username.errors?.['required']">Username is required</p>
+                <p *ngIf="username.errors?.['minlength']">Username is not lessthan 5 characters</p>
+                <p *ngIf="username.errors?.['maxlength']">Username should not exceed 15 characters</p>
+            </dd>
+            <dt>Mobile No</dt>
+            <dd><input type="text" ngModel #mobileno="ngModel" name="mobileno" pattern="\+91\d{10}" required></dd>
+            <dd class="text-danger" *ngIf="frmRegister.submitted && mobileno.invalid">
+                <p *ngIf="mobileno.errors?.['required']">Mobile number is required</p>
+                <p *ngIf="mobileno.errors?.['pattern']">Mobile number must be digits</p>
+            </dd>
+        </dl>
+        <button class="btn btn-primary">Register</button>
+    </form>
+</div>

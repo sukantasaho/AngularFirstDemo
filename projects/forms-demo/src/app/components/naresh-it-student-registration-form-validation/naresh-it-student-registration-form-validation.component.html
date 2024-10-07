@@ -1,0 +1,42 @@
+<div class="container fluid">
+    <div class="main">
+        <form #studentRegistrationForm="ngForm" (submit)="Register(studentRegistrationForm.value)">
+            <div class="form-group">
+              <label>First Name</label>
+              <input ngModel #firstName="ngModel" type="text" class="form-control" name="firstName" placeholder="Enter your first name" required minlength="5" maxlength="10">
+               <div class="text-danger" *ngIf="studentRegistrationForm.submitted && firstName.invalid">
+                    <span  *ngIf="firstName.errors?.['minlength']">First name should contains minimum 5 characters</span>
+                    <span  *ngIf="firstName.errors?.['required']">First name is required</span>
+                    <span  *ngIf="firstName.errors?.['maxlength']">First name should not exceed 10 characters</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" ngModel #lastName="ngModel" required minlength="5" maxlength="10" class="form-control" name="lastName" placeholder="Enter your last name">
+                <div class="text-danger" *ngIf="studentRegistrationForm.submitted && lastName.invalid">
+                    <span  *ngIf="lastName.errors?.['minlength']">Last name should contains minimum 5 characters</span>
+                    <span  *ngIf="lastName.errors?.['required']">Last name is required</span>
+                    <span  *ngIf="lastName.errors?.['maxlength']">Last name should not exceed 10 characters</span>
+                </div>
+                <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" ngModel #email="ngModel" required class="form-control" name="email" placeholder="Enter your email">
+                <div class="text-danger" *ngIf="studentRegistrationForm.submitted && email.invalid">
+                    <span  *ngIf="lastName.errors?.['required']">Email is required</span>
+                </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <div class="form-check">
+                <input type="checkbox"  id="check">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+ 
+</div>

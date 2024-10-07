@@ -1,0 +1,22 @@
+.frm{
+    background-color: #e8eaf6;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    margin-left: 130px;
+}
+.btn{
+    margin-left: 150px;
+}
+h6,h5{
+    color:green;
+    text-align: center;   
+}
+h5:hover{
+    cursor: pointer;
+}
+ 
+#message{
+   width: 400px;
+   
+}

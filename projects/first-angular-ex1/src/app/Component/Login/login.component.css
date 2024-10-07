@@ -1,0 +1,17 @@
+div{
+    text-align: center;
+}
+h1{
+    text-align: center;
+    color: blue;
+}
+form{
+    background-color: aqua;
+    margin-left: 600px;
+    margin-right: 600px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 25px;
+    border: 1px solid blue;
+    border-radius: 5px;
+}

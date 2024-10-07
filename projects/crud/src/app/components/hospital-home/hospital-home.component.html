@@ -1,0 +1,86 @@
+<div class="container-fluid">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container-fluid">
+              <h3 class="text-white"><img src="assets/pfizerLogo.jpeg" width="60px" class="rounded"/>PfizerLink</h3>
+              <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto m-2">
+                    <button class="btn btn-primary" (click)="Load()"><b>Fetch Doctors</b></button>&nbsp;&nbsp;&nbsp;
+                    <div>
+                      <button class="btn btn-primary"><a routerLink="observable">Observable</a></button>
+                    </div>
+                </ul>
+                <div class="d-flex">
+                  <div>
+                    <input class="form-control me-2" type="text"  [(ngModel)]="query" placeholder="Enter Your Doctor ID">
+                  </div>&nbsp;&nbsp;
+                  <div>
+                    <button class="btn btn-primary" type="button" (click)="OnSearch()">Search</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main style="height: 500px; width: 1350px; padding-left: 50px;" class="col-9 d-flex flex-wrap  overflow-auto row justify-content-end">
+      <div class="row m-5">
+        <div class="col-6">
+           <table class="table table-striped" *ngIf="flag">
+             <thead>
+                <tr>
+                   <th class="bg-dark text-white">Id&nbsp;<i class="bi bi-arrow-down bg-primary text-white rounded" (click)="SortById()" title="ID Sorted Lower To High"></i></th>
+                   <th class="bg-dark text-white">Name&nbsp;<i class="bi bi-arrow-down bg-primary text-white rounded" (click)="SortByName()" title="Name Sorted Alphabetic Ascending Order"></i></th>
+                   <th class="bg-dark text-white">Income&nbsp;<i class="bi bi-arrow-up bg-primary text-white rounded" (click)="SortByIncome()" title="Income Sorted High To Low"></i></th>
+                   <th class="bg-dark text-white">Specialization&nbsp;<i class="bi bi-arrow-up bg-primary text-white rounded" (click)="SortBySpecialization()" title="Specialization Sorted Alphabetic Descending Order"></i></th>
+                   <th class="bg-dark text-white">Action</th>
+                </tr>
+             </thead>
+             <tbody>
+                <tr *ngFor="let doctor of doctors">
+                   <td>{{doctor.docId}}</td>
+                   <td>{{doctor.docName}}</td>
+                   <td>{{doctor.income  | currency:'INR'}}</td>
+                   <td>{{doctor.specialization}}</td>
+                   <td>
+                     <button class="btn btn-primary"><a routerLink="edit/{{doctor.docId}}"><b>Edit</b></a></button>&nbsp;&nbsp;&nbsp;
+                     <button class="btn btn-danger"> <a routerLink="delete/{{doctor.docId}}"><b>Delete</b></a></button>
+                   </td>
+                 </tr>
+             </tbody>
+           </table>
+           <table class="table table-striped" *ngIf="showSearchRecord">
+             <thead>
+                <tr>
+                   <th class="bg-dark text-white">Id&nbsp;<i class="bi bi-arrow-down bg-primary text-white rounded" (click)="SortById()" title="ID Sorted Lower To High"></i></th>
+                   <th class="bg-dark text-white">Name&nbsp;<i class="bi bi-arrow-down bg-primary text-white rounded" (click)="SortByName()" title="Name Sorted Alphabetic Ascending Order"></i></th>
+                   <th class="bg-dark text-white">Income&nbsp;<i class="bi bi-arrow-up bg-primary text-white rounded" (click)="SortByIncome()" title="Income Sorted High To Low"></i></th>
+                   <th class="bg-dark text-white">Specialization&nbsp;<i class="bi bi-arrow-up bg-primary text-white rounded" (click)="SortBySpecialization()" title="Specialization Sorted Alphabetic Descending Order"></i></th>
+                   <th class="bg-dark text-white">Action</th>
+                </tr>
+             </thead>
+             <tbody>
+                <tr>
+                   <td>{{doctor.docId}}</td>
+                   <td>{{doctor.docName}}</td>
+                   <td>{{doctor.income  | currency:'INR'}}</td>
+                   <td>{{doctor.specialization}}</td>
+                   <td>
+                     <button class="btn btn-primary"><a routerLink="edit/{{doctor.docId}}"><b>Edit</b></a></button>&nbsp;&nbsp;&nbsp;
+                     <button class="btn btn-danger"> <a routerLink="delete/{{doctor.docId}}"><b>Delete</b></a></button>
+                   </td>
+                 </tr>
+             </tbody>
+           </table>
+         </div>
+         <div class="col-6">
+             <h1><a routerLink="save" class="insert">Inserting Operation</a></h1>
+             <section class="mt-3">
+                 <router-outlet></router-outlet>
+             </section>
+         </div>
+     </div>
+    </main>
+</div>
+
+
+ 

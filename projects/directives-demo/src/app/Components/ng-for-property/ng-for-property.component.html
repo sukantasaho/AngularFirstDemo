@@ -1,0 +1,26 @@
+<div>
+    <h3>NgFor Property</h3>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>Preview</th>
+                <th>Index</th>
+                <th>First</th>
+                <th>Last</th>
+                <th>Even</th>
+                <th>Odd</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr [class.odd]="o" [class.even]="e" *ngFor="let item of products; let i=index;let e =even;let o=odd; let f=first; let l = last">
+               <td><img [src]="item.image" alt="" width="100px" height="100px"></td>
+               <td>{{i}}</td>
+               <td>{{f}}</td>
+               <td>{{l}}</td>
+               <td>{{e}}</td>
+               <td>{{o}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

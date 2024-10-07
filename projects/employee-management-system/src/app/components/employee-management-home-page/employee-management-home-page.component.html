@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <div class="container-fluid bg-dark p-2">
+      <header>
+          <ul>
+            <li><img src="assets/emp.jpg" width="40px" height="40px" class="rounded-circle"></li>
+            <li><button class="btn btn-primary" (click)="DisplayEmployees()">All Employees</button></li>
+            <li><button class="btn btn-primary">Add</button></li>
+          </ul>
+      </header>
+    </div>
+    <div class="container-fluid bg-warning">
+        <marquee behavior="scroll" direction="left" scrollamount="10"><b>This Is Employee Management Application Where Employee Registration and Lots Of Operation Can Perform</b></marquee>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-8">
+                <div class="table-responsive">
+                    <table class="table table-stripped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NAME</th>
+                                <th>GENDER</th>
+                                <th>ADDRESS</th>
+                                <th>EMAIL</th>
+                                <th>AADHAR</th>
+                                <th>SALARY</th>
+                                <th>DOJ</th>
+                                <th>DOR</th>
+                                 
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let emp of employees">
+                            <td >{{emp.empIdentity}}</td>
+                            <td>{{emp.empName}}</td>
+                            <td>{{emp.empGender}}</td>
+                            <td>{{emp.empAddress}}</td>
+                            <td>{{emp.empEmail}}</td>
+                            <td>{{emp.empAadhar}}</td>
+                            <td>{{emp.empSalary | number}}</td>
+                            <td>{{emp.empJoiningDate}}</td>
+                            <td>{{emp.empReleivingDate}}</td>
+                           </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

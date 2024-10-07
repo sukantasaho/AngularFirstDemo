@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <h2>Register User By Email</h2>
+    <dl>
+        <dt>Username</dt>
+        <dd><input type="text" (keyup)="VerifyUser($event)"></dd>
+        <dd><span [ngClass]="{'text-danger':isInvalid,'text-success':true}">{{userError}}</span></dd>
+        <dt>Password</dt>
+        <dd><input type="password"  (keypress)="VerifyPassword($event)" ></dd>
+        <dd *ngIf="isPasswordWarnVisible" class="text-warning">
+            <span class="bi bi-exclamation-triangle-fill">CapsOn</span>
+        </dd>
+    </dl>
+</div>

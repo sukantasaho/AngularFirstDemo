@@ -1,0 +1,7 @@
+h6,h5{
+    color:green;
+    text-align: center;   
+}
+h5:hover{
+    cursor: pointer;
+}

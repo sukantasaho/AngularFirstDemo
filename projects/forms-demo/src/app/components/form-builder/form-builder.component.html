@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <form [formGroup]="frmRegister" (submit)="Register(frmRegister.value)">
+        <h3>Student Register Form</h3>
+        <dl>
+            <dt>Product Name</dt>
+            <dd><input type="text" formControlName="name"></dd>
+            <dd class="text-danger" *ngIf="Name.touched && Name.invalid">
+                <p *ngIf="Name.errors?.['required']">Name is required</p>
+                <p *ngIf="Name.errors?.['minlength']">Name is minimum 5 characters mandotory</p>
+            </dd>
+            <dt>Price</dt>
+            <dd><input type="number" formControlName="price"></dd>
+            <dl formGroupName="frmVendor">
+                <dt>Vender Name</dt>
+                <dd><input type="text" formControlName="venderName"></dd>
+                <dt>Vender Rating</dt>
+                <dd><input type="text" formControlName="venderRating"></dd>
+            </dl>
+            <dl formGroupName="frmVenderContactDetails">
+                <dt>Website</dt>
+                <dd><input type="text" formControlName="website"></dd>
+                <dt>Address</dt>
+                <dd><input type="text" formControlName="address"></dd>
+                <dt>Phone</dt>
+                <dd><input type="text" formControlName="phone"></dd>
+            </dl>
+        </dl>
+        <button class="btn btn-primary">Register</button>
+    </form>
+</div>
